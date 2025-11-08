@@ -22,7 +22,7 @@
         /* Header */
         .header {
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 20px 30px;
             background: white;
             box-shadow: 0 4px 15px rgba(255, 198, 157, 0.2);
             position: sticky;
@@ -33,26 +33,33 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            gap: 8px;
         }
-        .logo-img {
-            width: 70px;
-            height: auto;
-            margin-right: 15px;
+        .book-emoji {
+            font-size: 3.5rem;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         .logo-text {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.8rem;
+            font-weight: 900;
             background: linear-gradient(135deg, var(--accent), var(--peach-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         .catchphrase {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--accent);
             letter-spacing: 0.5px;
+            margin-top: 8px;
         }
         /* Container */
         .container {
@@ -73,7 +80,7 @@
             padding-top: 20px;
             transition: width 0.3s ease;
             z-index: 30;
-            margin-top: 120px;
+            margin-top: 145px;
         }
         .sidebar.open {
             width: 220px;
@@ -329,10 +336,13 @@
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                padding: 20px 15px;
+                padding: 25px 15px 20px;
             }
             .logo-text {
-                font-size: 1.5rem;
+                font-size: 2rem;
+            }
+            .book-emoji {
+                font-size: 2.5rem;
             }
             .catchphrase {
                 font-size: 0.95rem;
@@ -356,12 +366,11 @@
             }
         }
         @media (max-width: 480px) {
-            .logo-container {
-                flex-direction: column;
+            .logo-text {
+                font-size: 1.6rem;
             }
-            .logo-img {
-                margin-right: 0;
-                margin-bottom: 10px;
+            .book-emoji {
+                font-size: 2rem;
             }
             .subjects-grid, .resources-grid, .pyq-container {
                 grid-template-columns: 1fr;
@@ -405,10 +414,11 @@
     <!-- Header -->
     <header class="header">
         <div class="logo-container">
-            <img src="Screenshot-2025-11-08-01.34.10.jpg" alt="PagePal Logo" class="logo-img">
-            <div class="logo-text">PagePal</div>
+            <span class="book-emoji">📚</span>
+            <div class="logo-text">PAGEPAL</div>
+            <span class="book-emoji">📚</span>
         </div>
-        <p class="catchphrase">📚 Your Study Buddy For Smarter Resource Exchange! 🎓</p>
+        <p class="catchphrase">✨ Your Study Buddy For Smarter Resource Exchange! 🎓</p>
     </header>
     <div class="container">
         <!-- Sidebar Menu -->
